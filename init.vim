@@ -10,10 +10,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'dsznajder/vscode-es7-javascript-react-snippets', {
       \ 'do': 'yarn install --frozen-lockfile && yarn compile' }
   " post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-
-  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'ryanoasis/vim-devicons' " vimscript
 
   Plug 'nvim-lua/popup.nvim' " Necessary for telescope
@@ -23,18 +21,20 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
 
+  Plug 'mattn/emmet-vim'
+  Plug 'itchyny/lightline.vim'
+
   " Themes
   Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
-execute "source " . nerdtree
-
 " Themes Config
 set background=dark
 colorscheme gruvbox
+set laststatus=2
 
 " Configurations
-let mapleader=' '
+let mapleader=','
 filetype plugin on
 
 " The Sets
@@ -269,3 +269,7 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox'
+      \}
+let g:user_emmet_leader_key='<leader>'
