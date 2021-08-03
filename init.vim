@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-lua/plenary.nvim' " Necessary for telescope
   Plug 'nvim-telescope/telescope.nvim'
 
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
 
@@ -317,7 +319,21 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" ---------------------------- Lightline Configuration
 let g:lightline = {
       \ 'colorscheme': 'gruvbox'
       \}
+
+" ---------------------------- Emmet Configuration
 let g:user_emmet_leader_key='<leader>'
+
+" ---------------------------- NERDTree Configuration
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <leader>fe :NERDTreeToggle<CR>
+nnoremap <leader>fs :NERDTreeFind<CR>
+
+" ---------------------------- Markdown Preview Configuration
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
