@@ -44,6 +44,7 @@ set encoding=UTF-8
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
+set autoindent
 set smartindent
 set exrc
 set relativenumber
@@ -309,7 +310,7 @@ noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
 
 " Close buffer
-noremap <leader>c :bd<CR>
+"noremap <leader>c :bd<CR>
 
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -337,3 +338,28 @@ nnoremap <leader>fs :NERDTreeFind<CR>
 nmap <C-s> <Plug>MarkdownPreview
 nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+"------------------------------------------------------------------------
+"☢️ Experimental Changes
+set cursorline " highlight current line
+
+" Faster way to ESC from insert mode
+imap kj <ESC>
+
+" Open config file in a new tab
+nnoremap <leader>ev :tabedit ~/.config/nvim/init.vim <CR>
+
+" Reload config file
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+
+" Clear Search highlight
+nnoremap <silent> <leader>a :<C-u>nohlsearch<C-l>
+
+" Show all buffers 
+nnoremap <leader>sb :ls<CR>:b<Space>
+
+" Close current window
+nnoremap <leader>c :q<CR>
+
+" Write current buffer
+nnoremap <leader>w :write<CR>
