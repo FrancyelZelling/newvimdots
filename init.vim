@@ -25,6 +25,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'itchyny/lightline.vim'
 
+  Plug 'zefei/vim-wintabs'
+  Plug 'zefei/vim-wintabs-powerline'
+
+
   " Themes
   Plug 'gruvbox-community/gruvbox'
 call plug#end()
@@ -48,7 +52,7 @@ set smartindent
 set exrc
 set relativenumber
 set nohlsearch
-set hidden
+"set hidden
 set noerrorbells
 set nu
 set smartcase
