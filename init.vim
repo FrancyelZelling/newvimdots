@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'windwp/nvim-ts-autotag' " Better tag completion for react
   Plug 'dsznajder/vscode-es7-javascript-react-snippets', {
       \ 'do': 'yarn install --frozen-lockfile && yarn compile' }
-  " post install (yarn install | npm install) then load plugin only for editing supported files
 
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'ryanoasis/vim-devicons' " vimscript
@@ -363,3 +362,9 @@ nnoremap <leader>c :q<CR>
 
 " Write current buffer
 nnoremap <leader>w :write<CR>
+
+" --------------------------------------------------------------
+"  prettier
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat = 1
+
