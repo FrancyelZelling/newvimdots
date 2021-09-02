@@ -28,6 +28,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'zefei/vim-wintabs'
   Plug 'zefei/vim-wintabs-powerline'
 
+  Plug 'lukas-reineke/indent-blankline.nvim'
+
 
   " Themes
   Plug 'gruvbox-community/gruvbox'
@@ -229,8 +231,7 @@ lua << eof
         '--column',
         '--smart-case'
       },
-      prompt_prefix = "> ",
-      selection_caret = "> ",
+
       entry_prefix = "  ",
       initial_mode = "insert",
       selection_strategy = "reset",
@@ -371,4 +372,14 @@ nnoremap <leader>w :write<CR>
 "  prettier
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat = 1
+
+" -----------------------------------------------------------------------------
+" Indent-line
+
+lua << eof 
+  require("indent_blankline").setup {
+      char = "|",
+      buftype_exclude = {"terminal"}
+  }
+eof 
 
