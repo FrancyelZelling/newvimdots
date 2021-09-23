@@ -25,8 +25,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'itchyny/lightline.vim'
 
-  Plug 'zefei/vim-wintabs'
-  Plug 'zefei/vim-wintabs-powerline'
+"  Plug 'zefei/vim-wintabs'
+"  Plug 'zefei/vim-wintabs-powerline'
 
   Plug 'lukas-reineke/indent-blankline.nvim'
 
